@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>codingFoo</title>
+  <subtitle></subtitle>
+  <id>http://www.codingfoo.com/til</id>
+  <link href="http://www.codingfoo.com/til"/>
+  <link href="http://www.codingfoo.com/til/feed.xml" rel="self"/>
+  <updated>2016-06-11T14:52:08-06:00</updated>
+  <author>
+    <name>Bowen Masco</name>
+  </author>
+  <entry>
+    <title>git diff</title>
+    <link rel="alternate" href="http://www.codingfoo.com/til/git/git-diff/"/>
+    <id>http://www.codingfoo.com/til/git/git-diff/</id>
+    <published>2016-06-11T14:52:08-06:00</published>
+    <updated>2017-08-02T12:08:47-06:00</updated>
+    <author>
+      <name>Bowen Masco</name>
+    </author>
+    <content type="html">&lt;h1 id="git-diff"&gt;Git diff&lt;/h1&gt;
+
+&lt;p&gt;Three dots
+&lt;code&gt;
+git diff master...develop
+&lt;/code&gt;
+shows what changed on develop since you forked from master (basically it diffs against how master looked &lt;em&gt;when you branched&lt;/em&gt;) whereas two dots&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+git diff master..develop
+&lt;/code&gt;
+or just
+&lt;code&gt;
+git diff master develop
+&lt;/code&gt;
+ shows the difference from master &lt;em&gt;right now&lt;/em&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>ssh passphrase in keychain</title>
+    <link rel="alternate" href="http://www.codingfoo.com/til/ssh/ssh-passphrase-in-keychain/"/>
+    <id>http://www.codingfoo.com/til/ssh/ssh-passphrase-in-keychain/</id>
+    <published>2016-06-11T14:52:08-06:00</published>
+    <updated>2017-08-02T12:08:47-06:00</updated>
+    <author>
+      <name>Bowen Masco</name>
+    </author>
+    <content type="html">&lt;h1 id="passphrase-in-keychain"&gt;Passphrase in Keychain&lt;/h1&gt;
+
+&lt;p&gt;SSH Agent can store passphrases to keys in the login keychain. This way
+you dont have to remember to load your key each time you restart your
+machine&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+ssh-add -K
+ssh-add -K path/to/private_key
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Source: &lt;a href="http://fplanque.com/dev/mac/secure-ssh-private-keys-on-mac-osx-10-5"&gt;blog post&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Override Secrets Locally</title>
+    <link rel="alternate" href="http://www.codingfoo.com/til/software/secrets-override/"/>
+    <id>http://www.codingfoo.com/til/software/secrets-override/</id>
+    <published>2016-06-11T14:52:08-06:00</published>
+    <updated>2017-08-02T12:08:47-06:00</updated>
+    <author>
+      <name>Bowen Masco</name>
+    </author>
+    <content type="html">&lt;h1 id="override-secrets-locally"&gt;Override secrets locally&lt;/h1&gt;
+
+&lt;p&gt;When you need to override secrets locally in a yaml file, use:
+&lt;code&gt;
+ foo_secret: &amp;lt;%= env['FOO'] || 'value' %&amp;gt;
+&lt;/code&gt;
+to pull in an environment var with the overriding value. The secret that you set
+in the environment will be cleared when you close that terminal. This will keep
+you from leaving non development values in your secrets file.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>simple server</title>
+    <link rel="alternate" href="http://www.codingfoo.com/til/ruby/simple-server/"/>
+    <id>http://www.codingfoo.com/til/ruby/simple-server/</id>
+    <published>2016-06-11T14:52:08-06:00</published>
+    <updated>2017-08-02T12:08:47-06:00</updated>
+    <author>
+      <name>Bowen Masco</name>
+    </author>
+    <content type="html">&lt;h1 id="how-to-serve-the-current-dir"&gt;How to serve the current dir&lt;/h1&gt;
+
+&lt;p&gt;There is probably a simpler way to do this, but this will serve the current directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+require 'webrick'
+server = WEBrick::HTTPServer.new( {:BindAddress =&amp;gt; '0.0.0.0', :Port =&amp;gt; 3000, :DocumentRoot =&amp;gt; '.'})
+server.start
+&lt;/code&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>cron</title>
+    <link rel="alternate" href="http://www.codingfoo.com/til/devops/cron/"/>
+    <id>http://www.codingfoo.com/til/devops/cron/</id>
+    <published>2016-06-11T14:52:08-06:00</published>
+    <updated>2017-08-02T12:08:47-06:00</updated>
+    <author>
+      <name>Bowen Masco</name>
+    </author>
+    <content type="html">&lt;h1 id="how-to-test-cron-jobs"&gt;How to test cron jobs&lt;/h1&gt;
+
+&lt;p&gt;Export the cron env:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+* * * * * env &amp;gt; ~/cronenv
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;then start a shell with the same environment:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+env - `cat ~/cronenv` /bin/sh
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Source: &lt;a href="http://stackoverflow.com/questions/2135478/how-to-simulate-the-environment-cron-executes-a-script-with"&gt;stackoverflow answer 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Source: &lt;a href="http://stackoverflow.com/questions/4984725/how-to-test-cron-job"&gt;stackoverflow answer 2&lt;/a&gt;&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Edit Long Commands</title>
+    <link rel="alternate" href="http://www.codingfoo.com/til/bash/edit-long-commands/"/>
+    <id>http://www.codingfoo.com/til/bash/edit-long-commands/</id>
+    <published>2016-06-11T14:52:08-06:00</published>
+    <updated>2017-08-02T12:08:47-06:00</updated>
+    <author>
+      <name>Bowen Masco</name>
+    </author>
+    <content type="html">&lt;h1 id="how-to-edit-long-commands"&gt;How to edit Long Commands&lt;/h1&gt;
+
+&lt;p&gt;You can use the shortcut&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+Ctrl-x Ctrl-e
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;to open commands on the command line in an editor.
+On save and close the command is run.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>AWS Lamda Use Cases</title>
+    <link rel="alternate" href="http://www.codingfoo.com/til/aws/aws-lamda-use-cases/"/>
+    <id>http://www.codingfoo.com/til/aws/aws-lamda-use-cases/</id>
+    <published>2016-06-10T18:00:00-06:00</published>
+    <updated>2017-08-02T12:08:47-06:00</updated>
+    <author>
+      <name>Bowen Masco</name>
+    </author>
+    <content type="html">&lt;h1 id="uses-for-aws-lambda"&gt;Uses for AWS Lambda&lt;/h1&gt;
+
+&lt;p&gt;Devops management scripts: dont need dedicated instances.&lt;/p&gt;
+
+&lt;p&gt;Data driven monitoring and response.&lt;/p&gt;
+
+&lt;p&gt;Testing and deployment verification.&lt;/p&gt;
+</content>
+  </entry>
+</feed>
