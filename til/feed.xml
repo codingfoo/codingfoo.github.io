@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://www.codingfoo.com/til/git/git-diff/"/>
     <id>http://www.codingfoo.com/til/git/git-diff/</id>
     <published>2016-06-11T14:52:08-06:00</published>
-    <updated>2017-08-02T12:08:47-06:00</updated>
+    <updated>2018-01-06T03:53:02-07:00</updated>
     <author>
       <name>Bowen Masco</name>
     </author>
@@ -37,11 +37,31 @@ git diff master develop
 </content>
   </entry>
   <entry>
+    <title>simple server</title>
+    <link rel="alternate" href="http://www.codingfoo.com/til/ruby/simple-server/"/>
+    <id>http://www.codingfoo.com/til/ruby/simple-server/</id>
+    <published>2016-06-11T14:52:08-06:00</published>
+    <updated>2018-01-06T03:53:02-07:00</updated>
+    <author>
+      <name>Bowen Masco</name>
+    </author>
+    <content type="html">&lt;h1 id="how-to-serve-the-current-dir"&gt;How to serve the current dir&lt;/h1&gt;
+
+&lt;p&gt;There is probably a simpler way to do this, but this will serve the current directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+require 'webrick'
+server = WEBrick::HTTPServer.new( {:BindAddress =&amp;gt; '0.0.0.0', :Port =&amp;gt; 3000, :DocumentRoot =&amp;gt; '.'})
+server.start
+&lt;/code&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>ssh passphrase in keychain</title>
     <link rel="alternate" href="http://www.codingfoo.com/til/ssh/ssh-passphrase-in-keychain/"/>
     <id>http://www.codingfoo.com/til/ssh/ssh-passphrase-in-keychain/</id>
     <published>2016-06-11T14:52:08-06:00</published>
-    <updated>2017-08-02T12:08:47-06:00</updated>
+    <updated>2018-01-06T03:53:02-07:00</updated>
     <author>
       <name>Bowen Masco</name>
     </author>
@@ -61,11 +81,32 @@ ssh-add -K path/to/private_key
 </content>
   </entry>
   <entry>
+    <title>Edit Long Commands</title>
+    <link rel="alternate" href="http://www.codingfoo.com/til/bash/edit-long-commands/"/>
+    <id>http://www.codingfoo.com/til/bash/edit-long-commands/</id>
+    <published>2016-06-11T14:52:08-06:00</published>
+    <updated>2018-01-06T03:53:02-07:00</updated>
+    <author>
+      <name>Bowen Masco</name>
+    </author>
+    <content type="html">&lt;h1 id="how-to-edit-long-commands"&gt;How to edit Long Commands&lt;/h1&gt;
+
+&lt;p&gt;You can use the shortcut&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+Ctrl-x Ctrl-e
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;to open commands on the command line in an editor.
+On save and close the command is run.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Override Secrets Locally</title>
     <link rel="alternate" href="http://www.codingfoo.com/til/software/secrets-override/"/>
     <id>http://www.codingfoo.com/til/software/secrets-override/</id>
     <published>2016-06-11T14:52:08-06:00</published>
-    <updated>2017-08-02T12:08:47-06:00</updated>
+    <updated>2018-01-06T03:53:02-07:00</updated>
     <author>
       <name>Bowen Masco</name>
     </author>
@@ -81,31 +122,11 @@ you from leaving non development values in your secrets file.&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>simple server</title>
-    <link rel="alternate" href="http://www.codingfoo.com/til/ruby/simple-server/"/>
-    <id>http://www.codingfoo.com/til/ruby/simple-server/</id>
-    <published>2016-06-11T14:52:08-06:00</published>
-    <updated>2017-08-02T12:08:47-06:00</updated>
-    <author>
-      <name>Bowen Masco</name>
-    </author>
-    <content type="html">&lt;h1 id="how-to-serve-the-current-dir"&gt;How to serve the current dir&lt;/h1&gt;
-
-&lt;p&gt;There is probably a simpler way to do this, but this will serve the current directory.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-require 'webrick'
-server = WEBrick::HTTPServer.new( {:BindAddress =&amp;gt; '0.0.0.0', :Port =&amp;gt; 3000, :DocumentRoot =&amp;gt; '.'})
-server.start
-&lt;/code&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>cron</title>
     <link rel="alternate" href="http://www.codingfoo.com/til/devops/cron/"/>
     <id>http://www.codingfoo.com/til/devops/cron/</id>
     <published>2016-06-11T14:52:08-06:00</published>
-    <updated>2017-08-02T12:08:47-06:00</updated>
+    <updated>2018-01-06T03:53:02-07:00</updated>
     <author>
       <name>Bowen Masco</name>
     </author>
@@ -130,32 +151,11 @@ env - `cat ~/cronenv` /bin/sh
 </content>
   </entry>
   <entry>
-    <title>Edit Long Commands</title>
-    <link rel="alternate" href="http://www.codingfoo.com/til/bash/edit-long-commands/"/>
-    <id>http://www.codingfoo.com/til/bash/edit-long-commands/</id>
-    <published>2016-06-11T14:52:08-06:00</published>
-    <updated>2017-08-02T12:08:47-06:00</updated>
-    <author>
-      <name>Bowen Masco</name>
-    </author>
-    <content type="html">&lt;h1 id="how-to-edit-long-commands"&gt;How to edit Long Commands&lt;/h1&gt;
-
-&lt;p&gt;You can use the shortcut&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-Ctrl-x Ctrl-e
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;to open commands on the command line in an editor.
-On save and close the command is run.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
     <title>AWS Lamda Use Cases</title>
     <link rel="alternate" href="http://www.codingfoo.com/til/aws/aws-lamda-use-cases/"/>
     <id>http://www.codingfoo.com/til/aws/aws-lamda-use-cases/</id>
     <published>2016-06-10T18:00:00-06:00</published>
-    <updated>2017-08-02T12:08:47-06:00</updated>
+    <updated>2018-01-06T03:53:02-07:00</updated>
     <author>
       <name>Bowen Masco</name>
     </author>
